@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/@webex/embedded-app-sdk@2.0.0-beta.1" defer></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <script src="https://kit.fontawesome.com/f4a0e6453b.js" crossorigin="anonymous"></script>
+        <title>Democast</title>
+        <style>
+            .column.is-centered {
+                display: flex;
+                justify-content: center;
+            }
+  
+            .my-hero-fullheight {
+              height: calc(100vh - 72px)
+            }
+  
+            .is-vcentered {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+            }
+  
+            .iframe {
+                width:100%;
+                min-height: 600px;
+            }
+  
+            #hero-section {
+                border-radius: 6px;
+            }
+
+            #logout {
+              max-width: 32px;
+              max-height: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header-box" class="columns is-mobile is-centered is-info has-background-info mt-0">
+            <div class="column is-centered">
+                <h1 id='main-title' class="title mb-0">Democast</h1>
+                <figure class="image ml-3 mt-1 is-32x32">
+                  <img id="webex-avatar" class="is-rounded"></img>
+                </figure> 
+                <button id="logout" title="logout" class="button is-narrow is-rounded mt-1 ml-2 px-3">
+                  <span class="icon">
+                      <i class="fas fa-right-from-bracket"></i>
+                  </span>
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-mobile is-centered mb-0">
+            <div class="column is-narrow">
+                <div id="status-message" class="notification is-success py-3 px-3 has-text-centered" style="visibility: hidden;"></div>
+            </div>
+        </div>
+        <div id="webapp-view" style="display:none;">
+          <div id="select-meeting-label" class="columns is-mobile is-centered my-0" style="display:none;">
+            <div class="column is-centered is-narrow py-0">Select Meeting:</div>
+          </div>
+          <div id="meetings-div" class="columns is-mobile is-centered my-0">
+            <div class="column is-1 is-centered py-0"></div>
+            <div id="my-meetings" class="column pt-0">
+            </div>
+            <div class="column is-1 is-centered py-0"></div>
+          </div>
+          <div id="enter-destination-label" class="columns is-mobile is-centered my-0" style="display:none;">
+            <div class="column is-centered is-narrow py-0">- or -</div>
+          </div>
+          <div id="destination-div" class="columns is-mobile is-centered mb-0" style="">
+            <div class="column is-narrow">
+              <input class="input" id="destination-input" placeholder="Enter meeting SIP address" type="text"/>
+            </div>
+          </div>
+        </div>
+        <div id="demos" style="display: none;">
+          <div class="columns is-mobile is-centered mb-0" style="">
+            <div class="column is-narrow is-centered">
+              <button id="terminate" class="button is-narrow is-rounded is-danger mr-1" disabled>
+                <span class="icon">
+                  <i class="fas fa-trash"></i>
+                </span>
+                <span class="pb-1">Terminate</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://unpkg.com/webex/umd/webex.min.js"></script>
+    <script type="text/javascript" src="static/index.js" defer></script>
+</html>

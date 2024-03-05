@@ -1,0 +1,8 @@
+.devcontainer/server/node_modules/
+.devcontainer/server/package-lock.json
+*.env
+.DS_Store
+*.yaml
+Notes
+lib/__pycache__/
+__pycache__/
