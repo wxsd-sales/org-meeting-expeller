@@ -17,7 +17,47 @@ Expel AI or guest users immediately after entry to a meeting (across the org).
 
 ### Installation Steps:
 
-1.  Right now, this pretty much only works inside a docker container.
+Clone from source:  
+```
+git clone https://github.com/wxsd-sales/org-meeting-expeller.git
+```
+
+1. A ```.env``` file is required in ```.devcontainer/server``` regardless of whether you are running as a python script or as a container.  The ```.env``` file should contain the following variables:
+```
+MY_APP_PORT=8080
+
+#A Bot is used to send a message to a preconfigured space whenever a person/bot matching the EXPEL_DOMAINS is expelled
+WEBEX_ALERT_BOT_TOKEN="ABCD_EFGH_IJKL-mnop-qrst-uvwx"
+WEBEX_ALERT_ROOM_ID="Y21234567890"
+
+#Meeting Expeller (Integration) created on developer.webex.com with the scopes listed in the scopes variable below.
+WEBEX_CLIENT_ID=
+WEBEX_CLIENT_SECRET=
+WEBEX_REFRESH_TOKEN=""
+MY_URI="https://some.example.ngrok.io"
+WEBEX_SCOPES="spark%3Akms%20meeting%3Acontrols_write%20meeting%3Aadmin_schedule_write%20meeting%3Aschedules_read%20meeting%3Aparticipants_read%20spark%3Apeople_read%20meeting%3Acontrols_read%20meeting%3Aadmin_participants_read%20meeting%3Aparticipants_write%20meeting%3Aadmin_schedule_read%20meeting%3Aschedules_write"
+
+#The email address of the Webex Licensed Admin account that will be used as the account to expel bots, enter below:
+ADMIN_EMAIL=""
+EXPEL_DOMAINS="fireflies.ai,gong.io,read.ai"
+```
+
+2. The repo is designed to be run as a docker container, so you can build from the dockerfile by navigating to the .devcontainer directory and running:
+```
+docker build -t org-meeting-expeller .
+```
+```
+docker run -i -p 8080:8080 -t org-meeting-expeller
+```   
+**- OR -**  
+You can run this directly in python after installing the requirements.txt in ```.devcontainer/server```:
+```
+pip install -r requirements.txt
+```
+Then,
+```
+python server.py
+```
 
 
 ## License
