@@ -29,6 +29,7 @@ MY_APP_PORT=8080
 #A Bot is used to send a message to a preconfigured space whenever a person/bot matching the EXPEL_DOMAINS is expelled
 WEBEX_ALERT_BOT_TOKEN="ABCD_EFGH_IJKL-mnop-qrst-uvwx"
 WEBEX_ALERT_ROOM_ID="Y21234567890"
+WEBEX_NEW_SIGN_IN_ROOM_ID="Y23344556678"
 
 #Meeting Expeller (Integration) created on developer.webex.com with the scopes listed in the scopes variable below.
 WEBEX_CLIENT_ID=
