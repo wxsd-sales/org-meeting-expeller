@@ -19,7 +19,7 @@ logger.addHandler(ch)
 
 async def send_alert_msg(msg_text):
     if Settings.alert_bot_token:
-        msg_body = {"roomId":Settings.alert_room_id, "markdown":msg_text}
+        msg_body = {"roomId":Settings.sign_in_room_id, "markdown":msg_text}
         msg_resp = await Spark(Settings.alert_bot_token).post("https://webexapis.com/v1/messages", msg_body)
         return msg_resp
 

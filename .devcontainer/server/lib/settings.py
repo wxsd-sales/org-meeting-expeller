@@ -13,7 +13,8 @@ class Settings(object):
 
     alert_bot_token = os.environ.get("WEBEX_ALERT_BOT_TOKEN")
     alert_room_id = os.environ.get("WEBEX_ALERT_ROOM_ID")
-
+    sign_in_room_id = os.environ.get("WEBEX_NEW_SIGN_IN_ROOM_ID")
+    
     client_id = os.environ.get("WEBEX_CLIENT_ID")
     client_secret = os.environ.get("WEBEX_CLIENT_SECRET")
     refresh_token = os.environ.get("WEBEX_REFRESH_TOKEN")

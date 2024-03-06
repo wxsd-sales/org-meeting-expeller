@@ -3,7 +3,6 @@
 ############################################################
 #docker build -t org-meeting-expeller .
 #docker run -i -p 10031:10031 -t org-meeting-expeller
-#docker run -i --restart always -p 10031:10031 -v /Users/taylorhanson/Documents/GitHub/in-meeting-demos/.devcontainer/server/nodePuppeteer/media:/opt/server/nodePuppeteer/media -t org-meeting-expeller
 ###########################################################################
 
 FROM python:3.8.3
